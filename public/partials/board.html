@@ -1,0 +1,28 @@
+<h2>جدول تیم ها</h2>
+
+<div class="col-sm-12"></div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>نام تیم</th>
+          <th>برد</th>
+          <th>باخت</th>
+          <th>تفاضل گل</th>
+          <th>امتیاز</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="boardInfo in board | orderBy:[pointSorType, goalSorType]:sortReverse">
+          <td>{{boardInfo.name}}</td>
+          <td>{{boardInfo.win}}</td>
+          <td>{{boardInfo.lost}}</td>
+          <td>{{boardInfo.goal_avarage}}</td>
+          <td>{{boardInfo.point}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

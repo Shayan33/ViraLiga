@@ -1,0 +1,12 @@
+.dropdown-menu.datepicker-popup {
+	width: 270px;
+}
+
+.dropdown-menu {
+	right: auto;
+	margin-left: -38px;
+}
+
+vt-persian-date-picker>.input-group>input {
+	height: 34px;
+}

@@ -1,0 +1,25 @@
+*{
+	font-family: "Nazanin";
+	font-size: 14px;
+}
+.textRight {
+	text-align: rtl;
+}
+.butotnFont {
+	font-size: 16px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+.logoSize {
+	width: 24px;
+	height: 24px;
+}
+.resultBox {
+	border: 2px solid black;
+	padding: 15px;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 23px 9px #030 inset;
+	height: 60px;
+	background-color: #c0ff80;
+	text-align: center;
+}

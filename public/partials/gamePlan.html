@@ -1,0 +1,112 @@
+<div class="col-sm-12 pull-right">
+  <div class="col-sm-12">
+    <div class="col-sm-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-6"><span>برنامه بازی ها</span></div>
+            <div class="col-sm-3">
+              <a ng-click="Func.addTeam()" class="btn btn-success btn-add  col-lg-8 col-md-9 pull-left">افزودن
+                <i class="glyphicon  glyphicon-plus"></i>
+              </a>
+            </div>
+            <div class="col-sm-3">
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">زمان<span class="caret" style="margin-right: 2px;"></span></button>
+                  <ul class="dropdown-menu">
+                    <li style="max-height: 150px; overflow: auto;">
+                    <a href="" ng-click="Func.onWeekClick(number)" 
+                      ng-repeat="number in weekNumbers">{{number}}</a></li>
+                  </ul>
+                </div> 
+                <input type="text" class="form-control" ng-model="numberOfWeek">
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="panel-body" ng-if="weekSelect">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                 <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" style="cursor: pointer;" ng-repeat="gameplan in plan" 
+                ng-if="gameplan.week == numberOfWeek">
+                <td class="col-sm-5">{{gameplan.team1.name}}</td>
+                <td class="col-sm-2"> - </td>
+                <td class="col-sm-5">{{gameplan.team2.name}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-4">
+              <a style="" ng-click="Func.addPlan()" class="btn btn-success btn-save  col-lg-12 col-md-12 pull-left">ثبت
+                <i class="glyphicon  glyphicon-floppy-disk"></i>
+              </a>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <a style="" ng-click="Func.onCancelClick()" class="btn btn-success btn-cancel  col-lg-12 col-md-12 pull-left ng-scope">انصراف
+                <i class="glyphicon  glyphicon-remove-circle"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+           <form>
+            <div class="row col-sm-12 form-group">
+              <label>تیم اول</label>
+             <ui-select ng-model="firstTeam" style="width: 300px;" on-select="Func.firstSelect($item, $model)">
+                <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="team in teamsList">
+                  <span>{{team.name}}</span>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+            <div class="row col-sm-12 form-group">
+              <label>تیم دوم</label>
+              <ui-select ng-model="secondTeam" style="width: 300px;" on-select="Func.secondSelect($item, $model)">
+                <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="team in teamsList">
+                  <span>{{team.name}}</span>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+           <div class="row col-sm-12 form-group" style="position: relative;">
+              <label class="col-sm-4" style="padding-right: 0px;">انتخاب تاریخ</label>
+              <input class="form-control" type="text" ng-model="weekNO"></input>
+              <!-- <div class="col-sm-8" style="padding-left: 0px;">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">زمان<span class="caret" style="margin-right: 2px;"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="" ng-click="Func.currentWeek()">همین هفته</a></li>
+                      <li><a href="" ng-click="Func.nextWeek()">هفته بعد</a></li>
+                    </ul>
+                  </div> 
+                  <input type="text" class="form-control" ng-model="weekSelection" aria-label="...">
+                </div>
+              </div> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--  <nav>
+    <ul class="pager">
+      <li class="next"><a href="#">هفته قبل<span aria-hidden="true">&larr;</span></a></li>
+      <li class="previous"><a href="" ng-click="nextWeekClick()"><span aria-hidden="true">&rarr;</span>هفته بعد</a></li>
+    </ul>
+  </nav> -->
+</div>

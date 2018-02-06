@@ -1,0 +1,86 @@
+<!-- <h2 class="textRight">Game Results</h2>
+
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+	<div class="row" ng-repeat="teamResult in results">
+		<div class="col-sm-4">{{teamResult.team1.name}}</div>
+		<div class="col-sm-4">{{teamResult.result[0]}} - {{teamResult.result[1]}}</div>
+		<div class="col-sm-4">{{teamResult.team2.name}}</div>
+	</div>
+</div>
+<div class="col-sm-3"></div> -->
+
+<div class="col-sm-12 pull-right">
+  <div class="col-sm-12">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-5"><span>نتایج بازی های این هفته</span></div>
+            <div class="col-sm-2" ng-if="mode == 'view'">
+              <a ng-click="Func.editResult()" class="btn btn-success btn-add  col-lg-8 col-md-9 pull-left">ویرایش
+                <i class="glyphicon  glyphicon-plus"></i>
+              </a>
+            </div>
+           <div class="col-sm-2" ng-if="mode == 'view'">
+              <a ng-click="Func.addResult()" class="btn btn-success btn-add  col-lg-8 col-md-9 pull-left">افزودن
+                <i class="glyphicon  glyphicon-plus"></i>
+              </a>
+            </div>
+             <div class="col-sm-2" ng-if="mode =='edit' || mode == 'add'">
+              <a ng-click="Func.sendResult()" class="btn btn-success btn-add  col-lg-8 col-md-9 pull-left">ثبت
+                <i class="glyphicon  glyphicon-plus"></i>
+              </a>
+            </div>
+            <div class="col-sm-2" ng-if="mode == 'edit' || mode == 'add'">
+              <a ng-click="Func.onCancelClick()" class="btn btn-success btn-add  col-lg-8 col-md-9 pull-left">انصراف
+                <i class="glyphicon  glyphicon-remove-cycle"></i>
+              </a>
+            </div>
+             <div class="col-sm-3">
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">زمان<span class="caret" style="margin-right: 2px;"></span></button>
+                  <ul class="dropdown-menu">
+                    <li style="max-height: 150px; overflow: auto;">
+                    <a href="" ng-click="Func.onWeekClick(number)" 
+                      ng-repeat="number in weekNumbers">{{number}}</a></li>
+                  </ul>
+                </div> 
+                <input type="text" class="form-control" ng-model="numberOfWeek">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body" ng-if="weekSelect">
+          <table class="table table-striped table-hover">
+            <tbody>
+              <tr class="text-center" style="cursor: pointer;" ng-repeat="teamResult in results" 
+                ng-if="teamResult.week == numberOfWeek">
+                <td class="col-sm-2">{{teamResult.team1.name}}</td>
+                <td class="col-sm-4" ng-if="mode == 'view'">{{teamResult.result[0]}} - {{teamResult.result[1]}}</td>
+                <td class="col-sm-4" ng-if="mode == 'edit' || mode == 'add'">
+                  <div class="col-sm-12">
+                    <div class="col-sm-5" style="padding: 0px;">
+                      <input class="form-control form-group" type="text" ng-model="teamResult.result[0]"></input>
+                    </div>
+                    <div class="col-sm-2" style="padding: 0px;"><span>-</span></div>
+                    <div class="col-sm-5" style="padding: 0px;">
+                      <input class="form-control form-group" type="text" ng-model="teamResult.result[1]"></input>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-sm-2">{{teamResult.team2.name}}</td>
+                <td class="col-sm-4" ng-if="mode == 'edit' || mode == 'add'" style="padding: 0px;">
+                  <vt-persian-date-picker name="gamePlayedDate"
+                    ng-if="mode == 'edit' || mode == 'add'"
+                    model="teamResult.date"></vt-persian-date-picker>  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

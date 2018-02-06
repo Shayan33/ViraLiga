@@ -1,0 +1,58 @@
+<html ng-app="viraLiga">
+<head>
+	<title>Soccer | Viratech</title>
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="js/lib/select.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/services.js"></script>
+	<script type="text/javascript" src="js/controllers/board.js"></script>
+	<script type="text/javascript" src="js/controllers/weekResult.js"></script>
+	<script type="text/javascript" src="js/controllers/teaManagment.js"></script>
+	<script type="text/javascript" src="js/controllers/gamePlan.js"></script>
+
+	<script type="text/javascript" src="js/lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
+	<script type="text/javascript" 
+		src="js/directives/angular-ui-bootstrap-datepicker/persian-datepicker-tpls.js"></script>
+	<script type="text/javascript" 
+		src="js/directives/angular-ui-bootstrap-datepicker/persiandate.js"></script>
+	<script type="text/javascript" 
+		src="js/directives/vtPersianDatePicker/vtPersianDatePickerDirective.js"></script>
+
+
+	<!-- css files -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-rtl.min.css">
+	<link rel="stylesheet" type="text/css" href="css/select.min.css">
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+	
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>ویرالیگا</h1>
+
+		<ul class="nav nav-pills" style="margin-bottom: 15px;">
+			<li ng-class="gameBoardActive">
+				<a href="/">جدول مسابقات</a>
+			</li>
+			<li ng-class="teaManagmentActive">
+				<a ui-sref="teaManagment">مدیریت تیم ها</a>
+			</li>
+			<li ng-class="resultActive">
+				<a ui-sref="results">نتایج</a>
+			</li>
+			<li ng-class="gamePlanActive">
+				<a ui-sref="gamePlan">برنامه بازی ها</a>
+			</li>
+		</ul>
+
+		<div class="col-sm-12" ui-view></div>
+	</div>
+</body>
+</html>

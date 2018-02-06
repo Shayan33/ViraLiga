@@ -1,0 +1,45 @@
+[
+  {
+    "team": { 
+        "id": "00",
+        "name": "UI_King"
+      },
+      "win": "4",
+      "lost": "1",
+      "goal_avarage": 23,
+      "point": 12
+    },
+
+    {
+      "team": { 
+        "id": "01",
+        "name": "Server_King"
+      },
+      "win": "2",
+      "lost": "3",
+      "goal_avarage": 3,
+      "point": 6
+    },
+
+    {
+      "team": { 
+        "id": "02",
+        "name": "Rahtech"
+      },
+      "win": "2",
+      "lost": "2",
+      "goal_avarage": 8,
+      "point": 6
+    },
+
+    {
+      "team": { 
+        "id": "03",
+        "name": "TheBoss"
+      },
+      "win": "3",
+      "lost": "2",
+      "goal_avarage": 16,
+      "point": 9
+    }
+  ]
